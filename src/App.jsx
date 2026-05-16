@@ -249,7 +249,7 @@ export default function App() {
     revenueMilestones: [
       { year: "2023-24", value: "47,826,279", label: "Annual Revenue" },
       { year: "2024-25", value: "46,333,562", label: "Annual Revenue" },
-      { year: "2025-26", value: "57,295,054", label: "Projected Revenue" }
+      { year: "2025-26", value: "57,295,054", label: "Annual Revenue" }
     ],
     stats: [
       { label: "Sales Ratio Increase", value: "15", suffix: "%", icon: <TrendingUp /> },
@@ -375,7 +375,7 @@ export default function App() {
                 <div className="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center text-accent"><Award size={16} /></div>
                 <div>
                   <p className="text-[8px] uppercase font-bold text-slate-500">Top Performance</p>
-                  <p className="text-xs font-bold text-white">Levi's Brand 2022</p>
+                  <p className="text-xs font-bold text-white">Killer & Easies Brand 2024</p>
                 </div>
               </div>
             </motion.div>
