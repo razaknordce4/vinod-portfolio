@@ -173,7 +173,7 @@ export default function App() {
       {
         company: "Kewal Kiran Clothing Ltd (KKCL)",
         role: "Sales Officer",
-        duration: "Jan 2024 – Present",
+        duration: "Feb 2024 – May 2026",
         logo: kkclLogo,
         achievements: [
           "Increased sales ratio through relationship-building initiatives.",
@@ -185,13 +185,11 @@ export default function App() {
       {
         company: "RR Athleisure Indian Pvt Ltd",
         role: "Store Manager",
-        duration: "June 2022 – Dec 2023",
+        duration: "June 2022 – Jan 2024",
         logo: rrLogo,
         achievements: [
           "Grew monthly revenue by 20% and increased ATV by 12%.",
-          "Led team of 8 associates with 95%+ target attainment consistently.",
-          "Optimized stockouts by 35% through redesigned forward planning.",
-          "Maintained shrinkage below 0.5% through bi-weekly cycle counts."
+          "Led team of 8 associates with 95%+ target attainment consistently."
         ]
       },
       {
@@ -229,7 +227,7 @@ export default function App() {
       },
       {
         title: "Client Acquisition",
-        desc: "Implementing high-conversion funnels and B2B relationship protocols.",
+        desc: "Implementing high-conversion funnels and B2C relationship protocols.",
         icon: <Target className="w-8 h-8 text-accent" />
       },
       {
@@ -243,8 +241,8 @@ export default function App() {
         icon: <Rocket className="w-8 h-8 text-accent" />
       },
       {
-        title: "B2B Management",
-        desc: "Managing complex stakeholder relationships and SLA compliance.",
+        title: "B2C Management",
+        desc: "Managing complex customer relationships and service excellence.",
         icon: <ShieldCheck className="w-8 h-8 text-accent" />
       }
     ],
@@ -258,6 +256,16 @@ export default function App() {
       { label: "Clients Managed", value: "20", suffix: "+", icon: <Users /> },
       { label: "Sales Targets", value: "95", suffix: "%", icon: <Target /> },
       { label: "Years Experience", value: "6", suffix: "+", icon: <Award /> }
+    ],
+    education: [
+      { degree: "Bachelor of Commerce (B.Com)", institution: "Bangalore University", year: "Graduated", location: "Bangalore" },
+      { degree: "Intermediate (MEC)", institution: "Vijayawada", year: "Completed", location: "Vijayawada" },
+      { degree: "SSC", institution: "Vijayawada", year: "Completed", location: "Vijayawada" }
+    ],
+    languages: [
+      { name: "Telugu", level: "Native" },
+      { name: "English", level: "Professional" },
+      { name: "Hindi", level: "Conversational" }
     ]
   };
 
@@ -404,7 +412,7 @@ export default function App() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="text-accent" />
-                  <span className="text-white font-medium">B2B Strategy</span>
+                  <span className="text-white font-medium">B2C Strategy</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="text-accent" />
@@ -417,6 +425,36 @@ export default function App() {
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="text-accent" />
                   <span className="text-white font-medium">CRM Mastery</span>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-12 border-t border-white/5">
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <Award className="text-accent" size={20} />
+                    Education
+                  </h3>
+                  <div className="space-y-4">
+                    {resumeData.education.map((edu, idx) => (
+                      <div key={idx} className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-accent before:rounded-full">
+                        <p className="text-white font-bold text-sm">{edu.degree}</p>
+                        <p className="text-slate-500 text-xs">{edu.institution} | {edu.location}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <Globe className="text-accent" size={20} />
+                    Languages
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {resumeData.languages.map((lang, idx) => (
+                      <div key={idx} className="px-4 py-2 bg-white/5 rounded-xl border border-white/10">
+                        <span className="text-white text-sm font-medium">{lang.name}</span>
+                        <span className="text-accent text-xs ml-2 opacity-70">({lang.level})</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -547,23 +585,73 @@ export default function App() {
       {/* --- 6. Achievements Section --- */}
       <Section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-accent/5 pointer-events-none" />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="max-w-5xl mx-auto relative z-10">
           <SectionHeading
             badge="Success Metrics"
             title="Quantifiable Results"
             centered
           />
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="glass-card p-10 flex flex-col items-center">
-              <PieChart className="w-12 h-12 text-accent mb-6" />
-              <AnimatedCounter value="15" suffix="% Increase" />
-              <p className="text-slate-400 mt-2">Increase in sales ratio through relationship-building.</p>
-            </div>
-            <div className="glass-card p-10 flex flex-col items-center">
-              <ShieldCheck className="w-12 h-12 text-accent mb-6" />
-              <AnimatedCounter value="35" suffix="% Improvement" />
-              <p className="text-slate-400 mt-2">Optimization of stockout incidents via proactive monitoring.</p>
-            </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            {/* KKCL Achievements */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="glass-card p-8 border-t-4 border-accent"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
+                  <TrendingUp size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-white">KKCL Performance</h3>
+              </div>
+              <div className="space-y-6">
+                {[
+                  { val: "15%", label: "Sales Ratio Increase", desc: "Achieved through strategic relationship-building initiatives." },
+                  { val: "25%", label: "Inventory Clearance", desc: "Aging stock cleared within 60 days via targeted schemes." },
+                  { val: "30%", label: "Stockout Reduction", desc: "Optimization of inventory availability via proactive ERP monitoring." },
+                  { val: "10+", label: "Brand Benchmarking", desc: "Comprehensive competitor analysis for market strategy." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="text-2xl font-extrabold text-accent shrink-0 w-16">{item.val}</div>
+                    <div>
+                      <p className="text-white font-bold text-sm">{item.label}</p>
+                      <p className="text-slate-500 text-xs mt-1">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* RR Athleisure Achievements */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="glass-card p-8 border-t-4 border-slate-700"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-slate-400">
+                  <PieChart size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-white">RR Athleisure Success</h3>
+              </div>
+              <div className="space-y-6">
+                {[
+                  { val: "20%", label: "Revenue Growth", desc: "Consistent monthly revenue increase and 12% ATV growth." },
+                  { val: "95%", label: "Target Attainment", desc: "Leading team to consistent high-performance results." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="text-2xl font-extrabold text-white/80 shrink-0 w-16">{item.val}</div>
+                    <div>
+                      <p className="text-white font-bold text-sm">{item.label}</p>
+                      <p className="text-slate-500 text-xs mt-1">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
