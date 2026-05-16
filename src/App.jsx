@@ -347,8 +347,8 @@ export default function App() {
             className="flex flex-col justify-center"
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-[1.2]">
-              Driving Revenue <br />
-              <span className="gradient-text">Growth & Client Relationships</span>
+              Area Sales Manager & <br />
+              <span className="gradient-text"> Driving in  revenue growth</span>
             </h1>
             <p className="text-base text-slate-400 mb-6 max-w-md leading-relaxed">
               6+ years of specialized expertise in sales strategy, territory management, and negotiation for market-leading apparel brands.
@@ -380,7 +380,8 @@ export default function App() {
               </div>
             </motion.div>
 
-            <div className="relative rounded-[1.5rem] overflow-hidden group max-w-[320px] lg:max-w-md shadow-2xl">
+            <div className="relative rounded-[1.5rem] overflow-hidden group max-w-[320px] lg:max-w-md ">
+              {/* shadow-2xl */}
               <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent z-10" />
               <img
                 src={vinodUser}
